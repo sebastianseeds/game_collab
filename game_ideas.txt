@@ -1,0 +1,6 @@
+# simple text to record game ideas.
+
+## Sidescrolling
+- Jurassic park like game where player controls a dinosaur
+- Contra-style sidescrolling shooter
+- SotN-style sidescrolling hack-and-slash
