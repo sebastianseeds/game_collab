@@ -4,3 +4,4 @@
 - Jurassic park like game where player controls a dinosaur
 - Contra-style sidescrolling shooter
 - SotN-style sidescrolling hack-and-slash
+- Fantasy-style sidescroller with multiple classes and a 3D element
