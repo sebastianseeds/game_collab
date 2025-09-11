@@ -5,5 +5,11 @@
 - Contra-style sidescrolling shooter
 - SotN-style sidescrolling hack-and-slash
 - Fantasy-style sidescroller with multiple classes and a 3D element
+- Cyberpunk-style evolution shooter w/hack-n-slash
+- 
+
+## FPS
 - Doom-style FPS where the player is a dinosaur, fighting scientists and marines
+
+## Top-down
 - Zombies Ate My Neighbors-stle top-down shooter where the player is an old person in a retirement home, fighting off nurses with their canes and crochet needles
