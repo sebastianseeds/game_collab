@@ -1,0 +1,12 @@
+# Quorum of Suns - Game Dependencies
+
+# Core game engine
+pygame>=2.5.0
+
+# Data handling and persistence  
+# (Using built-in json, no external deps needed yet)
+
+# Future dependencies (commented out for now):
+# numpy>=1.21.0          # For advanced math/AI calculations
+# pillow>=8.0.0          # For image processing and effects
+# requests>=2.25.0       # For future multiplayer/web features

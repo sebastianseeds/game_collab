@@ -1,0 +1,5 @@
+# Requirements for game development tools
+# Currently supports: bit_depth_converter.py
+
+pillow>=8.0.0
+numpy>=1.21.0

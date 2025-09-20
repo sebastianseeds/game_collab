@@ -14,23 +14,43 @@ A simple 2D space shooter game built with **Python** and **Pygame**.
 - Pygame 2.5+  
 
 ## 🛠️ Setup
-Install pygame (choose one method):
 
+Run the project setup from the repository root:
+```bash
+cd ../../
+./setup.sh
+```
+
+Or install pygame manually:
 ```bash
 # Option A: system package (Ubuntu/WSL)
 sudo apt install python3-pygame
 
 # Option B: pip (inside a venv)
 python3 -m pip install pygame
+```
 
 ## ▶️ Run
-python3 space_shooter.py
 
-## 📂 Repo Structure
-Asteroids/
+From the project root:
+```bash
+cd prototypes/space_shooter
+python3 space_shooter.py
+```
+
+Or use the shared environment runner:
+```bash
+python3 run.py
+```
+
+## 📂 Structure
+```
+space_shooter/
 ├── space_shooter.py        # Main game code
+├── run.py                  # Runner that uses shared utilities
 ├── setup_space_shooter.sh  # Script to install requirements
-└── run_game.sh             # Helper to launch the game (if using venv)
+└── README.md               # This file
+```
 
 ## 📝 License
 

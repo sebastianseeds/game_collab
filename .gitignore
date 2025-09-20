@@ -54,3 +54,43 @@ tramp
 # --- OS / misc ---
 .DS_Store
 Thumbs.db
+
+# --- Game development ---
+# Large binary files
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.m4a
+*.aiff
+
+# Large video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Large texture/model files
+*.psd
+*.xcf
+*.blend
+*.fbx
+*.obj
+*.3ds
+*.max
+
+# Very large images (keep reasonable PNGs/JPGs)
+*.tiff
+*.tga
+*.bmp
+*.raw
+
+# Temporary game files
+*.save
+*.tmp
+data/saves/*.json
+
+# Virtual environment names for this project
+tools_env/
+quorum_env/
