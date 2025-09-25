@@ -1,7 +1,7 @@
 # PRIMAL FURY
 ╭────────────────────────────────────────────────────────────────────────────╮
-│ A fast, Doom-style first-person action prototype where **you** are the dino│
-│ Built with **Godot 4.4.1** (Forward+)                                      │
+│ A fast, Doom-style first-person action prototype where **you** are the dino │
+│ Built with **Godot 4.4.1** (Forward+)                                       │
 ╰────────────────────────────────────────────────────────────────────────────╯
 
 > ▸ Play as a juvenile apex that evolves by harvesting **Genetic Energy**  
@@ -36,6 +36,7 @@
 
 ## 🎮 Controls (default)
 
+```
 W A S D   Move
 Mouse     Look
 Space     Jump
@@ -45,11 +46,13 @@ RMB       Bite / Execution
 Q         Tail Whip
 E         Roar
 Esc       Release mouse
+```
 
 ---
 
 ## 🗂 Project Layout
 
+```
 scenes/
   Arena.tscn             (Main)
   Player.tscn            (CharacterBody3D + Camera, BiteRay, TailWhipArea)
@@ -61,6 +64,7 @@ scripts/
   soldier.gd             (grounded AI + melee, capsule-center math)
   genetic_energy.gd      (pickup logic)
   hud.gd                 (labels; optional)
+```
 
 ---
 
@@ -86,13 +90,14 @@ scripts/
 | Soldier (Character)   |   3   | 1 + 2     |
 
 * “6” is the default Godot extra mask; leaving it is fine.
+```
 
 ---
 
 ## 🔧 Tuning Cheatsheet
 
 **Player (player.gd)**
-
+```
 speed:           10–12
 accel:           ~40
 look_sens:       ~0.003
@@ -100,15 +105,17 @@ gravity:         ~32
 jump_force:      ~12
 hurt_cooldown:   0.6–0.8
 floor_snap_len:  1.2–1.6   (prevents step-drop on attacks)
+```
 
 **Soldier (soldier.gd)**
-
+```
 hp:              60
 move_speed:      6.0–7.5
 touch_damage:    8
 attack_cooldown: 0.7–1.0
 touch_range:     1.2–1.4
 capsule radius:  0.8  (example)
+```
 
 **Hit Detection Highlights**
 - **Bite** → small overlap sphere in front of camera; executions heal & drop more.
@@ -158,4 +165,6 @@ prototype”). Use clear commit messages and prefer small, testable chunks.
 
 ## 🧵 One-liner Pitch
 
-> _Primal Fury_ flips the boomer-shooter fantasy: **You are the dinosaur**. Claw through squads, **execute** with a crushing bite, and **evolve** mid-arena by harvesting Genetic Energy. Become the apex!
+> _Primal Fury_ flips the boomer-shooter fantasy: **you’re the dinosaur**. Claw through
+> squads, **execute** with a crushing bite, and **evolve** mid-arena by harvesting
+> Genetic Energy. Become the apex.
