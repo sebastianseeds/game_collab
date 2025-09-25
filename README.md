@@ -18,6 +18,7 @@ game_ideas.txt       # Prototype ideas
 ## Prototypes
 
 - **[Space Shooter](prototypes/space_shooter/)**: Classic 2D space shooter (pygame)
+- **[Primal Fury](prototypes/primal_fury/)**: Doom-style first-dino hack-and-slash (Godot)
 
 ## Quick Start
 
