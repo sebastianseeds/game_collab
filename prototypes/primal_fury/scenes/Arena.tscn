@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://mjyj73e60fjm"]
+
+[ext_resource type="PackedScene" uid="uid://dncfmxmhv2wb3" path="res://scenes/Soldier.tscn" id="1_rarb2"]
+[ext_resource type="Script" uid="uid://cq7jp721olvjj" path="res://scripts/floor.gd" id="1_u3rsd"]
+[ext_resource type="PackedScene" uid="uid://bc6vuu5r204rm" path="res://scenes/Player.tscn" id="2_u3rsd"]
+[ext_resource type="PackedScene" uid="uid://ciicrqatui4s5" path="res://scenes/HUD.tscn" id="2_uch3s"]
+[ext_resource type="Script" uid="uid://b0m6r68xb8nhv" path="res://scenes/soldier.gd" id="5_bw14y"]
+
+[sub_resource type="Environment" id="Environment_rsy33"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rarb2"]
+size = Vector3(40, 2, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rarb2"]
+size = Vector3(50, 1, 50)
+
+[node name="Arena" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468612, 0.00371349, 0.000248909)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rsy33")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 6
+script = ExtResource("1_u3rsd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_rarb2")
+debug_color = Color(0.391828, 0.0244308, 0.478206, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999845, 0.0176095, 0, -0.0176095, 0.999845, 0, 0, 0)
+mesh = SubResource("BoxMesh_rarb2")
+
+[node name="HUD" parent="StaticBody3D" instance=ExtResource("2_uch3s")]
+
+[node name="Player" parent="." instance=ExtResource("2_u3rsd")]
+transform = Transform3D(-0.00811572, 0, -0.999967, 0, 1, 0, 0.999967, 0, -0.00811572, -18.8511, 2.47274, 0.0759838)
+
+[node name="Soldier" parent="." instance=ExtResource("1_rarb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -17)
+script = ExtResource("5_bw14y")
+attack_cooldown = 0.7
+
+[node name="Soldier2" parent="." instance=ExtResource("1_rarb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 2)
+script = ExtResource("5_bw14y")
+attack_cooldown = 0.7
+
+[node name="Soldier3" parent="." instance=ExtResource("1_rarb2")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 16, 1, 19)
+script = ExtResource("5_bw14y")
+attack_cooldown = 0.7

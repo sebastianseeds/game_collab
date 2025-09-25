@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciicrqatui4s5"]
+
+[ext_resource type="Script" uid="uid://bl6au47jujd4o" path="res://scenes/hud.gd" id="1_qpvh6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpvh6"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fls4u"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0.00351917, 0.00351917, 0.00351917, 1)
+
+[node name="HUD" type="CanvasLayer" groups=["hud"]]
+script = ExtResource("1_qpvh6")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 39.0
+text = "HP:100"
+label_settings = SubResource("LabelSettings_qpvh6")
+
+[node name="EnergyLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 56.0
+offset_bottom = 67.0
+text = "DNA: 0"
+label_settings = SubResource("LabelSettings_fls4u")

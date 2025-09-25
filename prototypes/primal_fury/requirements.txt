@@ -1,0 +1,113 @@
+PRIMAL FURY — REQUIREMENTS
+==========================
+
+Project type: Godot 4 prototype (GDScript)
+Target: PC (Windows / macOS / Linux)
+
+------------------------------------------------------------------------
+1) RUNTIME REQUIREMENTS
+------------------------------------------------------------------------
+- Godot Engine: 4.4.1 (stable)
+  * Confirm in Godot: Help → About (or window title bar).
+
+- Operating System (64-bit):
+  * Windows 10/11
+  * macOS 12+ (Intel or Apple Silicon)
+  * Linux (x86_64). Wayland/X11 are fine.
+
+- Graphics:
+  * Vulkan-capable GPU with recent drivers (macOS uses Metal automatically).
+  * Laptop iGPUs generally work; a discrete GPU is recommended.
+
+- Hardware:
+  * CPU: x86_64 (or Apple Silicon on macOS)
+  * RAM: 8 GB minimum (16 GB recommended)
+  * Disk: ~200 MB free for project + editor cache
+
+------------------------------------------------------------------------
+2) DEVELOPMENT REQUIREMENTS (IF YOU EDIT THE PROJECT)
+------------------------------------------------------------------------
+- Godot Editor 4.4.1 (stable) — exact version match is strongly recommended.
+- Git 2.30+ (optional, for version control).
+- Godot 4.4.1 Export Templates (optional, only if exporting builds):
+  Godot → Editor → Manage Export Templates → Download/Install.
+
+No C#, no external SDKs; the prototype is pure GDScript.
+
+------------------------------------------------------------------------
+3) QUICK SETUP
+------------------------------------------------------------------------
+- Open Godot 4.4.1 → "Import/Scan" → select the project folder.
+- Set Main Scene:
+  Project → Project Settings → Application → Run → Main Scene
+  → pick: scenes/Arena.tscn
+- Press ▶ (Play). The arena should load with a Player and several Soldiers.
+
+Optional debug: Debug → Visible Collision Shapes (toggles wireframes).
+
+------------------------------------------------------------------------
+4) EXPECTED SMOKE TEST (VERIFICATION)
+------------------------------------------------------------------------
+- The level loads; you can move with WASD + Mouse look.
+- HUD shows HP / Energy (basic labels).
+- LMB (Claw) hits when very close, RMB (Bite) executes point-blank,
+  Q (Tail Whip) knocks nearby targets, E (Roar) staggers briefly.
+- Soldiers approach and can deal contact damage at close range.
+- Genetic Energy orbs drop from Soldiers; executions drop more.
+
+Controls (default):
+  W A S D  Move       Mouse  Look
+  Space    Jump       Shift  Dash
+  LMB      Claw       RMB    Bite / Execution
+  Q        Tail Whip  E      Roar
+  Esc      Release mouse
+
+------------------------------------------------------------------------
+5) LAYERS / MASKS REFERENCE (FOR PHYSICS SANITY)
+------------------------------------------------------------------------
+  Node                     Layer   Mask
+  ----------------------   -----   -------------
+  Floor (StaticBody3D)       1     1 + 6 *
+  Player (Character)         2     1 + 3
+  TailWhip (Area3D)          2     3
+  Soldier (Character)        3     1 + 2
+  (* “6” is Godot’s default extra; keeping it is OK.)
+
+If actors pass through the floor or ignore each other, re-check these.
+
+------------------------------------------------------------------------
+6) COMMON ISSUES & QUICK FIXES
+------------------------------------------------------------------------
+- Editor opens but scene won’t run:
+  → Main Scene not set. See “Quick Setup”.
+
+- “Your GPU/driver does not support Vulkan” (Windows/Linux):
+  → Update GPU drivers. Godot 4 requires Vulkan (macOS uses Metal).
+
+- Characters sink or float:
+  → Ensure each CharacterBody3D has a CapsuleShape3D with sensible
+    radius/height and the CollisionShape3D’s Y offset centers the capsule
+    roughly at the torso.
+  → Keep floor_snap_length ≥ 1.2 on Player and Soldier.
+
+- Melee feels inconsistent:
+  → Verify Soldier scene is using the latest `soldier.gd`
+    (Scene → Reload Saved Scene; or re-assign the script).
+  → Ensure Soldiers are in the "enemy" group (Node → Groups).
+
+- Bite always misses:
+  → Confirm the BiteRay (or bite volume) is a child of the Player/Camera
+    and not blocked by the floor (try looking slightly down at close range).
+
+------------------------------------------------------------------------
+7) OPTIONAL TOOLS
+------------------------------------------------------------------------
+- Audio/SFX: any WAV/OGG placeholders are fine for prototyping.
+- Art: any glTF/OBJ placeholders; keep scales consistent (1 unit = 1 meter).
+- Text editor: Emacs/Vim/VS Code for quick doc/script edits.
+
+------------------------------------------------------------------------
+8) LICENSE NOTES
+------------------------------------------------------------------------
+- Code: MIT
+- Placeholder assets: prototype-only; replace for any distribution.
