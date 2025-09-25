@@ -1,7 +1,6 @@
 # PRIMAL FURY
 
-  A fast, Doom-style first-person action prototype where **you** are the dino
-  Built with **Godot 4.4.1** (Forward+)
+  A fast, Doom-style first-person action prototype where **you** are the dino. Built with **Godot 4.4.1** (Forward+)
 
 > ▸ Play as a juvenile apex that evolves by harvesting **Genetic Energy**  
 > ▸ Melee-forward combat: **Claw**, **Bite (Execution)**, **Tail Whip**, **Roar**  
